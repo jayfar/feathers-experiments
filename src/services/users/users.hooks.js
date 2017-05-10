@@ -11,12 +11,18 @@ const restrict = [
   })
 ];
 
+const createUserHook = require('../../hooks/create-user-hook');
+
 module.exports = {
   before: {
     all: [],
     find: [ authenticate('jwt') ],
     get: [ ...restrict ],
-    create: [ hashPassword() ],
+    create: [
+      hashPassword(),
+      commonHooks.setNow('createdAt', 'updatedAt'),
+      createUserHook()
+    ],
     update: [ ...restrict, hashPassword() ],
     patch: [ ...restrict, hashPassword() ],
     remove: [ ...restrict ]
