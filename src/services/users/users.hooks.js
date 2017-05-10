@@ -37,7 +37,7 @@ module.exports = {
     ],
     find: [],
     get: [],
-    create: [],
+    create: [createUserHook()],
     update: [],
     patch: [],
     remove: []

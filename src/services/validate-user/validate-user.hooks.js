@@ -1,33 +1,33 @@
-
+const commonHooks = require('feathers-hooks-common');
 
 module.exports = {
   before: {
     all: [],
-    find: [],
-    get: [],
-    create: [],
+    find: [commonHooks.disallow()],
+    get: [commonHooks.disallow()],
+    create: [commonHooks.disallow()],
     update: [],
-    patch: [],
-    remove: []
+    patch: [commonHooks.disallow()],
+    remove: [commonHooks.disallow()]
   },
 
   after: {
     all: [],
-    find: [],
-    get: [],
-    create: [],
+    find: [commonHooks.disallow()],
+    get: [commonHooks.disallow()],
+    create: [commonHooks.disallow()],
     update: [],
-    patch: [],
-    remove: []
+    patch: [commonHooks.disallow()],
+    remove: [commonHooks.disallow()]
   },
 
   error: {
     all: [],
-    find: [],
-    get: [],
-    create: [],
+    find: [commonHooks.disallow()],
+    get: [commonHooks.disallow()],
+    create: [commonHooks.disallow()],
     update: [],
-    patch: [],
-    remove: []
+    patch: [commonHooks.disallow()],
+    remove: [commonHooks.disallow()]
   }
 };
